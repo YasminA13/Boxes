@@ -15,6 +15,6 @@
 @property (assign, nonatomic) float height;
 
 - (float)volume;
-- (float)numberOfTimes;
+- (float)numberOfTimesFitsIn:(Box *)anotherBox;
 
 @end

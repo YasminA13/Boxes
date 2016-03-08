@@ -16,11 +16,28 @@
     return self.width * self.height * self.length;
     }
 
-- (float)numberOfTimes
+- (float)numberOfTimesFitsIn:(Box *)anotherBox
 {
-    return self.width * self.height * self.length;
+    float boxAVolume = [self volume];
+    float boxBVolume = [anotherBox volume];
+
+    float calcResult;
+    
+    if (boxAVolume > boxBVolume)
+    {
+        calcResult = boxAVolume / boxBVolume;
+    }
+    else
+    {
+        calcResult = boxBVolume / boxAVolume;
+    }
+    
+    return calcResult;
 }
 
 @end
 
-
+//
+//float boxAVolume = [boxA volume];
+//float boxBVolume = [boxB volume];
+//float calc_result = boxAVolume / boxBVolume;

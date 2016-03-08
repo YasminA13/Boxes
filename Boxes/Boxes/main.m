@@ -17,21 +17,32 @@ int main(int argc, const char * argv[]) {
     boxA.length = 20.5;
     boxA.height = 12.5;
     
-    NSLog(@"The box has a volume of %.2f", [boxA volume]);
+    NSLog(@"The Box A has a volume of %.2f", [boxA volume]);
     
     Box *boxB = [[Box alloc] init];
     boxB.width = 3.5;
     boxB.length = 3.5;
     boxB.height = 3.5;
     
-    NSLog(@"The box has a volume of %.2f", [boxB volume]);
+    NSLog(@"The Box B has a volume of %.2f", [boxB volume]);
+    
+    float x = [boxA numberOfTimesFitsIn:boxB];
     
     
-    float boxAVolume = [boxA volume];
-    float boxBVolume = [boxB volume];
-    float calc_result = boxAVolume / boxBVolume;
+    NSLog(@"The box fits in %.2f times", x);
     
-    NSLog(@"BoxB will fit in Box A: %.2f times", calc_result);
+//    float boxAVolume = [boxA volume];
+//    float boxBVolume = [boxB volume];
+//    float calc_result = boxAVolume / boxBVolume;
+    
+//    if (boxBVolume < boxAVolume)
+//    {
+//    NSLog(@"Box B will fit into Box A: %.2f times", calc_result);
+//    }
+//    if (boxBVolume > boxAVolume)
+//    {
+//        NSLog(@"The Box B will not fit into Box A - it's too big!");
+//    }
     
     return 0;
 }
